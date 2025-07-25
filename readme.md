@@ -93,7 +93,7 @@ Developed a machine learning model to predict game outcomes (`Win`, `Loss`, `Dra
 
 ---
 
-## 📁 Project Output
+## 📁 Project Files
 - 📓 [Data Extraction](chess_pgn_data_extraction.ipynb)
 - 📓 [Data Analysis](data_analysis.ipynb)
 
@@ -102,5 +102,5 @@ Developed a machine learning model to predict game outcomes (`Win`, `Loss`, `Dra
 ## 📬 Let’s Connect
 If you're a chess enthusiast, data analyst, or both — feel free to reach out or explore my other projects!
 
-> [LinkedIn](https://linkedin.com/in/nishiv_singh) | [GitHub](https://github.com/NishivSingh)
+> [LinkedIn](https://linkedin.com/in/nishiv-singh) | [GitHub](https://github.com/NishivSingh)
 
