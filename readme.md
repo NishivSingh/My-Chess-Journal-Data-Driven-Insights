@@ -1,83 +1,106 @@
 # ♟️ Chess Game Data Analysis
 
 ## 📌 Overview
-This project presents a comprehensive analysis of my year-long Lichess chess games using Python. The objective was to uncover actionable insights from my play history, focusing on time control, openings, performance trends, and rating progression. The analysis is enhanced with visualizations and observations rooted in real game data.
+This project presents an end-to-end data analysis of my chess games spanning **two years** (July 2022 – June 2024) on the platform **Lichess**. The goal was to extract meaningful patterns from the game data, understand my playing habits, and draw insights from visualizations.
 
 ## 🛠️ Tools & Libraries
 - Python
 - pandas, numpy
 - matplotlib, seaborn
 - python-chess
+- scikit-learn, LogisticRegression
 - Jupyter Notebook
 
-## 📂 Data Source
-- Personal `.pgn` file exported from [Lichess](https://lichess.org)
-- Covers one full year of game activity
+## 📂 Data Source  
+- The dataset consists of **2 years of personal game history** (July 2022 – June 2024) exported from [Lichess](https://lichess.org) in `.pgn` format.  
+- I used the **`python-chess` (`chess.pgn`)** package to parse and convert the `.pgn` data into a structured format.  
+- Game metadata, move sequences, player ratings, time controls, results, and other features were extracted and saved in an **Excel file** using `pandas` for further analysis and visualization.
 
 ---
 
 ## 📊 Exploratory Data Analysis
 
 ### 1. Game Distribution by Variant and Time Control
-> I primarily play Blitz and Bullet formats, with the vast majority being Standard variants.
+> Over two years, I primarily played **Blitz** and **Bullet**, with a strong focus on **Standard** variant games.
 
-![Game distribution](images/variant_timecontrol_distribution.png)
+![Game distribution](images/overview.png)
 
 ---
 
 ### 2. Monthly Game Count
-> There is a clear spike in playing activity during June and September, which aligns with periods of increased free time or motivation.
+> Clear spikes in activity were seen in months like **June and December**, aligning with periods of increased availability (semester break).
 
-![Monthly games](images/monthly_game_count.png)
+![Monthly games](images/games_played_per_month.png)
 
 ---
 
 ### 3. Performance by Opening
-> Openings like the **Sicilian Defense** and **King’s Pawn Opening** not only appear most frequently but also yield consistently higher win rates. This demonstrates a strategic advantage when I stick to familiar and tested openings.
+> Openings such as the **Sicilian Defense** and **Vienna Opening** consistently delivered **higher win rates**, making them reliable choices in competitive play.
 
-![Opening win rate](images/opening_winrate.png)
-
----
-
-### 4. Win Rate by Time Control
-> I perform best in **Classical** games, where I have more time to think and reduce blunders. **Blitz** games follow closely. **Bullet** games, while exciting, show a noticeable dip in performance, reinforcing the impact of time pressure on quality of play.
-
-![Win rate by time control](images/timecontrol_winrate.png)
+![Opening win rate](images/opening_performance.png)
 
 ---
 
-### 5. Elo Rating Progression Over Time
-> My rating has shown steady improvement over time, with small dips aligning with overplaying or fatigue. The upward trajectory confirms the effectiveness of consistent practice and strategic opening usage.
+### 4. Distribution of game length by results
+> A significant proportion of both wins and losses occurred in shorter games (under **30 moves**), indicating that critical blunders often happen in the early phase of the game — either by me or my opponent.
 
-![Rating progression](images/rating_over_time.png)
+> In contrast, longer games (**50+ moves**) more frequently resulted in draws, likely due to extensive piece exchanges leading to balanced endgame positions.
+
+![Win rate by time control](images/distribution_of_game_length.png)
+
+---
+
+### 5. Elo Rating Progression
+> A consistent upward trend in rating across all time formats reflects steady progress. The data confirms that focused practice and frequent play lead to measurable performance gains.
+
+![Rating progression](images/rating_progression_over_time.png)
+
+---
+
+## 🤖 Predictive Modeling
+
+Developed a machine learning model to predict game outcomes (`Win`, `Loss`, `Draw`) based on pre-game metadata.
+
+### 🔍 Features Used:
+- Elo ratings
+- Rating difference
+- Opening played
+- Time control
+- Variant
+- Castling behavior
+- Game length (moves/turns)
+
+### 📈 Model Performance:
+- **Model**: `Logistic Regressor`
+- **Accuracy Achieved**: `0.71`
+
+> The model highlighted **rating difference**, **opening choice**, and **time control** as the most influential predictors of game result.
 
 ---
 
 ## 💡 Key Insights
 
-- **Time control directly affects performance**: My win rate improves significantly with more time to think — Classical games produce the best outcomes.
-- **Opening selection has a measurable impact**: Sticking to a core set of openings leads to better results.
-- **Evening play = peak performance**: Most wins occur in the evening, suggesting improved focus during those hours.
-- **Bullet games are fun but costly**: While fast-paced, they yield the lowest win rate — an area for targeted improvement.
+- **Playing against stronger opponent** resulted in high win percentage and signifies the consistent growth over time.
+- **Familiar openings consistently drive better performance** — practicing a focused opening repertoire is key.
+- **Evening hours** tend to produce more wins, suggesting peak focus and better form.
 
 ---
 
-## 📌 Future Enhancements
-- ✅ Add predictive modeling to forecast match outcomes using metadata
-- ✅ Include positional analysis (e.g., centipawn loss, blunders, inaccuracies)
-- ✅ Deploy as an interactive dashboard with Streamlit or Power BI
+## 🚀 Future Enhancements
+- Add blunder/inaccuracy analysis using `Stockfish` evaluations
+- Build a `PowerBI` dashboard for real-time filtering and visualization
+- Extend the predictive model to include move-level features and use other classifications models.
 
 ---
 
 ## 📁 Project Output
-- ✅ [Project PDF with outputs](link-to-your-pdf-if-hosted)
-- ✅ [Jupyter Notebook](your_notebook.ipynb)
+- 📓 [Data Extraction](chess_pgn_data_extraction.ipynb)
+- 📓 [Data Analysis](data_analysis.ipynb)
 
 ---
 
-## 📬 Let's Connect!
-If you're passionate about chess, data, or both — feel free to connect on [LinkedIn](https://linkedin.com/in/your-profile) or explore my other projects.
+## 📬 Let’s Connect
+If you're a chess enthusiast, data analyst, or both — feel free to reach out or explore my other projects!
 
----
+> [LinkedIn](https://linkedin.com/in/nishiv_singh) | [GitHub](https://github.com/NishivSingh)
 
-## 📌 Example Directory Structure
